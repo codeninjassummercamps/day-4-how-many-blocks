@@ -58,7 +58,7 @@ Learn about loops and more conditions by guessing how many blocks the agent will
 
 ## How Many Blocks
 
-Look at each of the chat commands and try to guess how tall of a stack the agent will build for each one. Write down your guesses in the in-game book!
+Look at each of the chat commands and try to guess how tall of a stack the agent will build for each one. Write down your guesses in the in-game book! After you write your guesses, use the chat commands to test!
 
 ## Activity Complete!
 
