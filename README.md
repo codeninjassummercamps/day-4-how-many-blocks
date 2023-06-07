@@ -1,33 +1,65 @@
- 
+# Day 4 How Many Blocks
 
+```template
+let blocksPlaced = 0
+player.onChat("5", function () {
+    blocksPlaced = 0
+    agent.teleport(world(7, 0, -5), WEST)
+    while (!(agent.detect(AgentDetection.Block, UP))) {
+        agent.place(FORWARD)
+        agent.move(UP, 1)
+        blocksPlaced += 1
+        if (blocksPlaced >= 5) {
+            break;
+        }
+    }
+})
+player.onChat("1", function () {
+    agent.teleport(world(-9, 0, -5), WEST)
+    for (let index = 0; index < 5; index++) {
+        agent.place(FORWARD)
+        agent.move(UP, 1)
+    }
+})
+player.onChat("2", function () {
+    for (let index = 0; index <= 7; index++) {
+        agent.teleport(world(-5, index, -5), WEST)
+        agent.place(FORWARD)
+    }
+})
+player.onChat("3", function () {
+    agent.teleport(world(-1, 0, -5), WEST)
+    while (!(agent.detect(AgentDetection.Block, UP))) {
+        agent.place(FORWARD)
+        agent.move(UP, 1)
+    }
+})
+player.onChat("4", function () {
+    agent.teleport(world(3, 0, -5), WEST)
+    for (let index = 0; index <= 3; index++) {
+        agent.place(FORWARD)
+        agent.move(UP, 1)
+        if (index >= 1) {
+            break;
+        }
+    }
+})
+loops.forever(function () {
+    if (agent.getItemCount(1) <= 1) {
+        agent.setItem(GRASS, 64, 1)
+    }
+})
 
-> Open this page at [https://codeninjassummercamps.github.io/day-4-how-many-blocks/](https://codeninjassummercamps.github.io/day-4-how-many-blocks/)
+```
 
-## Use as Extension
+## How Many Blocks
 
-This repository can be added as an **extension** in MakeCode.
+Learn about loops and more conditions by guessing how many blocks the agent will place for each chat command!
 
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/codeninjassummercamps/day-4-how-many-blocks** and import
+## How Many Blocks
 
-## Edit this project ![Build status badge](https://github.com/codeninjassummercamps/day-4-how-many-blocks/workflows/MakeCode/badge.svg)
+Look at each of the chat commands and try to guess how tall of a stack the agent will build for each one. Write down your guesses in the in-game book!
 
-To edit this repository in MakeCode.
+## Activity Complete!
 
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/codeninjassummercamps/day-4-how-many-blocks** and click import
-
-## Blocks preview
-
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
-
-![A rendered view of the blocks](https://github.com/codeninjassummercamps/day-4-how-many-blocks/raw/master/.github/makecode/blocks.png)
-
-#### Metadata (used for search, rendering)
-
-* for PXT/arcade
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+You did it! Good work! 
